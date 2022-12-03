@@ -9,7 +9,7 @@ app.use("/form", express.static(__dirname + "/index.html"));
 app.use(fileUpload());
 
 app.get("/", function (req, res) {
-  res.send("ricky_sensei");
+  res.send("ricky_sensei, go to /form");
 });
 
 app.post("/upload", (req, res) => {
@@ -21,7 +21,7 @@ app.post("/upload", (req, res) => {
     return;
   }
 
-  console.log("req.files >>>", req.files);
+  console.log("uploaded: >>>", req.files.sampleFile.name);
 
   sampleFile = req.files.sampleFile;
 
